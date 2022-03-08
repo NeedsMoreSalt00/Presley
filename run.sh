@@ -1,2 +1,2 @@
 pip install slackclient
-java TestGui.java
+java App/GUI.java

@@ -1,5 +1,6 @@
 public abstract class Item {
     private String name;
+    private String UPC;
     private String company;
     private float price;
     private int count;
@@ -10,7 +11,9 @@ public abstract class Item {
     public String getName() {
         return this.name;
     }
-
+   public String UPC() {
+        return this.name;
+    }
     public void setName(String name) {
         this.name = name;
     }
