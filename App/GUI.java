@@ -10,6 +10,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Dimension;
+import java.util.*;
 
 
 public class GUI implements ActionListener {
@@ -21,16 +22,17 @@ public class GUI implements ActionListener {
     private JPanel panel;
     private JTable ItemList;
     private JScrollPane jps;
-  
-    public GUI() {
-      
-        frame = new JFrame();
-        inventory = new JButton("Inventory");
-          inventory.addActionListener(this);
-        label = new JLabel("Number of clicks: 0");
-        String[] column = {"Qty.", "Item", "Price"};
-        String[][] data = {{"1", "brewski", "1.08"}, {"1", "water", "10.73"}, {"2", "doritos", "6.75"}, {"1", "Guitar", "1000"}, {"2", "hat", "40"}, {"1", "lighter", "1.75"}};
 
+
+	
+    public GUI() {
+      frame = new JFrame();
+      inventory = new JButton("Inventory");
+      inventory.addActionListener(this);
+      label = new JLabel("Number of clicks: 0");
+      String[] column = {"Qty.", "Item", "Price"};
+      String[][] data = {{"1", "brewski", "1.08"}, {"1", "water", "10.73"}, {"2", "doritos", "6.75"}, {"1", "Guitar", "1000"}, {"2", "hat", "40"}, {"1", "lighter", "1.75"}};	
+			Vector<String> data2 = new Vector<String>(0);
       ItemList = new JTable(data, column);
       ItemList.setPreferredScrollableViewportSize(new Dimension(200, 70));
       ItemList.setFillsViewportHeight(false);
@@ -59,5 +61,6 @@ public class GUI implements ActionListener {
     public void actionPerformed(ActionEvent e) { //performs action when inventory                                                       button is clicked
       count++;
       label.setText("Number of clicks: " + count);
+			
     }
 }
