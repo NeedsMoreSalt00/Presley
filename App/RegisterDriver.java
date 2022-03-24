@@ -15,7 +15,7 @@ public class RegisterDriver {
 	
 	public static void main(String[] args) throws IOException {
 		
-		List<OrderItem> items = new ArrayList<OrderItem>();
+		List<Item> items = new ArrayList<Item>();
 		CSVReader reader = new CSVReader(new FileReader("src/inventory.csv"), ',', '"', 1);
 		
 		List<String[]> allItems = reader.readAll();
@@ -27,10 +27,10 @@ public class RegisterDriver {
 			float price = Float.parseFloat(item[3]);
 			int count = Integer.parseInt(item[4]);
 			
-			items.add(new OrderItem(name, UPC, company, price, count));
+			items.add(new Item(name, UPC, company, price, count));
 		}
 		
-		for (OrderItem item: items) {
+		for (Item item: items) {
 			System.out.println(item);
 		}
 		

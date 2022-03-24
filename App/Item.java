@@ -5,7 +5,15 @@ public abstract class Item {
     private float price;
     private int count;
 
-    public Item() {
+    public Item(String newName, String newUPC, 
+               String newCompany, float newPrice
+               int newCount) {
+      name = newName;
+      UPC = newUPC;
+      company = newCompany;
+      price = newPrice;
+      count = newCount;
+  
     }
 
     public String getName() {
